@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>我的第一个网页</title>
+ <title>RAHMAT 云南清真餐厅</title>
 
   <style>
+    /* Logo 图片样式 */
+.logo {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;border-radius: 18px;
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
     body {
       margin: 0;
       min-height: 100vh;
@@ -29,8 +40,9 @@
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
+
     button {
+  transition: transform 0.3s;
   background-color: #14532d;
   color: white;
   border: none;
@@ -38,13 +50,40 @@
   border-radius: 8px;
   cursor: pointer;
 }
+button:hover {
+  transform: scale(1.05);
+}
   </style>
 </head>
 <body>
 <div class="card">
+<img src="images/logo.jpg" alt="RAHMAT Logo" class="logo"> 
     <h1>RAHMAT</h1>
 <p id="message">云南清真料理 · Yunnan Muslim Cuisine</p>
-<button onclick="document.getElementById('message').textContent='欢迎来到 RAHMAT！Batu Kawan 新店敬请期待。'">了解更多</button>
+<button title="点击展开或收起餐厅介绍" onclick="
+  const message = document.getElementById('message');
+  if (this.textContent === '了解更多') {
+    message.textContent = '欢迎来到 RAHMAT！我们主打云南清真美食，Batu Kawan 新店敬请期待。';
+    this.textContent = '收起介绍';
+  } else {
+    message.textContent = '云南清真料理 · Yunnan Muslim Cuisine';
+    this.textContent = '了解更多';
+  }
+">了解更多</button><button onclick="window.open('images/yunnan-rice.png', '_blank')">
+  查看菜品
+</button>
+<p style="font-size: 12px; color: #666;">
+  图片为 AI 生成的菜品示意图，实际出品以店内为准。
+</p><h2>餐厅地址</h2>
+
+<p>
+  G-15 至 G-17, JALAN BOREALIS 6<br>
+  PUSAT KOMERSIAL BOREALIS<br>
+  14110 BANDAR CASSIA
+</p><button onclick="window.open('https://www.google.com/maps/search/?api=1&query=G-15+Jalan+Borealis+6+Pusat+Komersial+Borealis+14110+Bandar+Cassia', '_blank')">
+  查看地图
+</button><h2>营业时间</h2>
+<p>营业时间即将公布。</p>
   </div>
 </body>
 </html>
