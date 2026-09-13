@@ -77,7 +77,7 @@ button:hover {
   </style>
 </head>
 <body>
-<div class="card">
+<div id="top" class="card">
 <img src="images/logo.jpg" alt="RAHMAT Logo" class="logo"> 
     <h1>RAHMAT</h1>
 <p id="message">云南清真料理 · Yunnan Muslim Cuisine</p>
@@ -117,6 +117,9 @@ button:hover {
 <p>Halal Beef Rice Noodles</p>
 <p>Mi Beras Daging Lembu Halal</p>
 <p class="dish-info">价格即将公布 · 辣度：🌶️</p>
+<button onclick="document.getElementById('top').scrollIntoView({ behavior: 'smooth' })">
+  返回顶部
+</button>
 </section>
 <!-- 餐厅地址区域 -->
 <h2>餐厅地址</h2>
