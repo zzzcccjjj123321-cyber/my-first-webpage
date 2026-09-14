@@ -136,6 +136,18 @@ button:hover {
 <p>Halal Beef Rice Noodles</p>
 <p>Mi Beras Daging Lembu Halal</p>
 <p class="dish-info">价格即将公布 · 辣度可选</p>
+<p>
+  <label for="beef-spice">选择辣度：</label>
+  <select id="beef-spice" name="beef-spice"
+        onchange="document.getElementById('spice-result').textContent = '你选择的辣度：' + this.options[this.selectedIndex].text">
+    <option value="" selected disabled>请选择辣度</option>
+    <option value="none">不辣</option>
+    <option value="mild">微辣</option>
+    <option value="medium">中辣</option>
+    <option value="extra-hot">特辣</option>
+  </select>
+</p>
+<p id="spice-result">尚未选择辣度</p>
 <button onclick="document.getElementById('top').scrollIntoView({ behavior: 'smooth' })">
   返回顶部
 </button>
