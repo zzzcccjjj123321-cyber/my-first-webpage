@@ -157,6 +157,9 @@ button:hover {
   </select>
 </p>
 <p id="spice-result">尚未选择辣度</p>
+<button type="button" onclick="clearSpice()">
+  清除辣度选择
+</button>
 <button onclick="document.getElementById('top').scrollIntoView({ behavior: 'smooth' })">
   返回顶部
 </button>
@@ -188,7 +191,16 @@ button:hover {
 
     localStorage.setItem('beefSpice', selectElement.value);
   }
+function clearSpice() {
+  const spiceSelect = document.getElementById('beef-spice');
 
+  spiceSelect.selectedIndex = 0;
+
+  document.getElementById('spice-result').textContent =
+    '尚未选择辣度';
+
+  localStorage.removeItem('beefSpice');
+}
   const savedSpice = localStorage.getItem('beefSpice');
 
   if (savedSpice) {
