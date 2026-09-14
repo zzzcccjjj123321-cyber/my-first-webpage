@@ -147,8 +147,8 @@ button:hover {
 <p class="dish-info">价格即将公布 · 辣度可选</p>
 <p>
   <label for="beef-spice">选择辣度：</label>
-  <select id="beef-spice" name="beef-spice"
-        onchange="document.getElementById('spice-result').textContent = '你选择的辣度：' + this.options[this.selectedIndex].text">
+<select id="beef-spice" name="beef-spice"
+        onchange="saveSpice(this)">
     <option value="" selected disabled>请选择辣度</option>
     <option value="none">不辣</option>
     <option value="mild">微辣</option>
@@ -178,5 +178,29 @@ button:hover {
   © 2026 RAHMAT 云南清真餐厅
 </footer>
   </div>
+  <script>
+  function saveSpice(selectElement) {
+    const selectedText =
+      selectElement.options[selectElement.selectedIndex].text;
+
+    document.getElementById('spice-result').textContent =
+      '你选择的辣度：' + selectedText;
+
+    localStorage.setItem('beefSpice', selectElement.value);
+  }
+
+  const savedSpice = localStorage.getItem('beefSpice');
+
+  if (savedSpice) {
+    const spiceSelect = document.getElementById('beef-spice');
+    spiceSelect.value = savedSpice;
+
+    const savedText =
+      spiceSelect.options[spiceSelect.selectedIndex].text;
+
+    document.getElementById('spice-result').textContent =
+      '你选择的辣度：' + savedText;
+  }
+</script>
 </body>
 </html>
