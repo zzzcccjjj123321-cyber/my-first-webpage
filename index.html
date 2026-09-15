@@ -141,6 +141,13 @@ button:hover {
 <!-- 第二道菜的名称和说明 -->
 <h3>清真牛肉米线</h3>
 <p>牛肉搭配米线，以骨头汤为汤底。</p>
+<button type="button" onclick="toggleIngredients(this)">
+  查看配料
+</button>
+
+<p id="beef-ingredients" style="display: none;">
+  主要食材：米线、牛肉、骨头汤
+</p>
 <p class="recommend-tag">店长推荐</p>
 <p>Halal Beef Rice Noodles</p>
 <p>Mi Beras Daging Lembu Halal</p>
@@ -200,6 +207,17 @@ function clearSpice() {
     '尚未选择辣度';
 
   localStorage.removeItem('beefSpice');
+}
+function toggleIngredients(button) {
+  const ingredients = document.getElementById('beef-ingredients');
+
+  if (ingredients.style.display === 'none') {
+    ingredients.style.display = 'block';
+    button.textContent = '收起配料';
+  } else {
+    ingredients.style.display = 'none';
+    button.textContent = '查看配料';
+  }
 }
   const savedSpice = localStorage.getItem('beefSpice');
 
