@@ -116,6 +116,38 @@ button:hover {
   color: #14532d;
   font-size: 14px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.internal-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #14532d;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 6px;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.internal-link:hover {
+  transform: scale(1.05);
+}
+
+.round-link {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  padding: 0;
+}
+.internal-link,
+.map-link {
+  font-size: 13px;
+}
   </style>
 </head>
 <body>
@@ -132,11 +164,9 @@ button:hover {
     message.textContent = '云南清真料理 · Yunnan Muslim Cuisine';
     this.textContent = '了解更多';
   }
-">了解更多</button><button
-  style="width: 96px; height: 96px; border-radius: 50%; padding: 0;"
- onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })">
+">了解更多</button><a class="internal-link round-link" href="#menu">
   浏览菜品
-</button>
+</a>
 <p style="font-size: 12px; color: #666;">
   图片为 AI 生成的菜品示意图，实际出品以店内为准。
 </p>
@@ -189,9 +219,9 @@ height="600"
 <button type="button" onclick="clearSpice()">
   清除辣度选择
 </button>
-<button onclick="document.getElementById('top').scrollIntoView({ behavior: 'smooth' })">
+<a class="internal-link" href="#top">
   返回顶部
-</button>
+</a>
 </section>
 <!-- 餐厅地址区域 -->
 <h2>餐厅地址</h2>
