@@ -56,6 +56,21 @@
 button:hover {
   transform: scale(1.05);
 }
+.map-link {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 6px;
+  text-decoration: none;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.map-link:hover {
+  transform: scale(1.05);
+}
 
 .menu-section {
   margin-top: 30px;
@@ -184,8 +199,12 @@ height="600"
   G-15 至 G-17, JALAN BOREALIS 6<br>
   PUSAT KOMERSIAL BOREALIS<br>
   14110 BANDAR CASSIA
-</p><button style="background-color: blue;" onclick="window.open('https://www.google.com/maps/search/?api=1&query=G-15+Jalan+Borealis+6+Pusat+Komersial+Borealis+14110+Bandar+Cassia', '_blank')">
+<a class="map-link"
+   href="https://www.google.com/maps/search/?api=1&query=G-15+Jalan+Borealis+6+Pusat+Komersial+Borealis+14110+Bandar+Cassia"
+   target="_blank"
+   rel="noopener noreferrer">
   查看地图
+</a>
 </button>
 <!-- 营业时间区域 -->
 <h2>营业时间</h2>
