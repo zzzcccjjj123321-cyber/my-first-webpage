@@ -172,7 +172,10 @@ select:focus-visible {
 <img src="images/logo.jpg" alt="RAHMAT Logo" class="logo"> 
     <h1>RAHMAT</h1>
 <p id="message">云南清真料理 · Yunnan Muslim Cuisine</p>
-<button type="button" title="点击展开或收起餐厅介绍" onclick="
+<button type="button"
+        aria-controls="message"
+        title="点击展开或收起餐厅介绍"
+        onclick="
   const message = document.getElementById('message');
   if (this.textContent === '了解更多') {
     message.textContent = '欢迎来到 RAHMAT！我们主打云南清真美食，Batu Kawan 新店敬请期待。';
@@ -214,8 +217,8 @@ height="600"
 <!-- 第二道菜的名称和说明 -->
 <h3>清真牛肉米线</h3>
 <p>牛肉搭配米线，以骨头汤为汤底。</p>
-<button type="button"
-        aria-expanded="false"
+<redients(this)">
+  <button type="button"
         aria-controls="beef-ingredients"
         onclick="toggleIngredients(this)">
   查看配料
