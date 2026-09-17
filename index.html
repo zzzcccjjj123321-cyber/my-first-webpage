@@ -207,7 +207,10 @@ height="600"
 <!-- 第二道菜的名称和说明 -->
 <h3>清真牛肉米线</h3>
 <p>牛肉搭配米线，以骨头汤为汤底。</p>
-<button type="button" onclick="toggleIngredients(this)">
+<button type="button"
+        aria-expanded="false"
+        aria-controls="beef-ingredients"
+        onclick="toggleIngredients(this)">
   查看配料
 </button>
 
@@ -283,9 +286,11 @@ function toggleIngredients(button) {
   if (ingredients.style.display === 'none') {
     ingredients.style.display = 'block';
     button.textContent = '收起配料';
+    button.setAttribute('aria-expanded', 'true');
   } else {
     ingredients.style.display = 'none';
     button.textContent = '查看配料';
+    button.setAttribute('aria-expanded', 'false');
   }
 }
   const savedSpice = localStorage.getItem('beefSpice');
