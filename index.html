@@ -226,7 +226,9 @@ height="600"
 <p class="dish-info">价格即将公布 · 辣度可选</p>
 <p>
   <label for="beef-spice">选择辣度：</label>
-<select id="beef-spice" name="beef-spice"
+<select id="beef-spice"
+        name="beef-spice"
+        aria-describedby="spice-result"
         onchange="saveSpice(this)">
     <option value="" selected disabled>请选择辣度</option>
     <option value="none">不辣</option>
