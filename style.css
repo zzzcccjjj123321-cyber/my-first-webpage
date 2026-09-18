@@ -85,12 +85,16 @@ button:active,
 .dish-list {
   display: flex;
   gap: 28px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .dish-list article {
   flex: 1;
   min-width: 0;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
 }
 /* 菜品图片：控制宽度和圆角 */
 .dish-image {
