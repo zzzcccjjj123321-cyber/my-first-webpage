@@ -165,6 +165,19 @@ select:focus-visible {
 .restaurant-address {
   font-style: normal;
 }
+.image-note {
+  font-size: 12px;
+  color: #666;
+}.dish-divider {
+  margin: 28px 0;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+}
+.site-footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #666;
+}
   </style>
 </head>
 <body>
@@ -172,16 +185,16 @@ select:focus-visible {
 <img src="images/logo.jpg" alt="RAHMAT Logo" class="logo"> 
     <h1>RAHMAT</h1>
 <p id="message">云南清真料理 · Yunnan Muslim Cuisine</p>
-<button type="button"
+<button id="intro-button"
+        type="button"
         aria-controls="message"
-        title="点击展开或收起餐厅介绍"
-        onclick="toggleIntro(this)">
+        title="点击展开或收起餐厅介绍">
   了解更多
 </button>
 <a class="internal-link round-link" href="#menu">
   浏览菜品
 </a>
-<p style="font-size: 12px; color: #666;">
+<p class="image-note">
   图片为 AI 生成的菜品示意图，实际出品以店内为准。
 </p>
 </header>
@@ -198,7 +211,7 @@ height="600"
  <p class="recommend-tag special-tag">特色菜品</p>
   <p>更多菜品即将公布</p>
   </article>
-  <hr style="margin: 28px 0; border: none; border-top: 1px solid #e5e5e5;">
+  <hr class="dish-divider">
 <!-- 第二道菜：清真牛肉米线 -->
  <article>
 <img src="images/dish-02-web.jpg"
@@ -212,13 +225,14 @@ height="600"
 <h3>清真牛肉米线</h3>
 <p>牛肉搭配米线，以骨头汤为汤底。</p>
 
-  <button type="button"
+  <button id="ingredients-button"
+        type="button"
         aria-controls="beef-ingredients"
-        onclick="toggleIngredients(this)">
+        aria-expanded="false">
   查看配料
 </button>
 
-<p id="beef-ingredients" style="display: none;">
+<p id="beef-ingredients" hidden>
   主要食材：米线、牛肉、骨头汤
 </p>
 <p class="recommend-tag">店长推荐</p>
@@ -229,8 +243,7 @@ height="600"
   <label for="beef-spice">选择辣度：</label>
 <select id="beef-spice"
         name="beef-spice"
-        aria-describedby="spice-result"
-        onchange="saveSpice(this)">
+        aria-describedby="spice-result">
     <option value="" selected disabled>请选择辣度</option>
     <option value="none">不辣</option>
     <option value="mild">微辣</option>
@@ -239,7 +252,7 @@ height="600"
   </select>
 </p>
 <p id="spice-result" aria-live="polite">尚未选择辣度</p>
-<button type="button" onclick="clearSpice()">
+<button id="clear-spice-button" type="button">
   清除辣度选择
 </button>
 </article>
@@ -265,12 +278,12 @@ height="600"
 <h2>营业时间</h2>
 <p>新店筹备中，开业日期与营业时间即将公布。</p>
 <!-- 页脚区域 -->
-<footer style="margin-top: 24px; font-size: 12px; color: #666;">
+<footer class="site-footer">
   © 2026 RAHMAT 云南清真餐厅
 </footer>
   </main>
   <script>
-    function toggleIntro(button) {
+  function toggleIntro(button) {
   const message = document.getElementById('message');
 
   if (button.textContent.trim() === '了解更多') {
@@ -283,6 +296,12 @@ height="600"
     button.textContent = '了解更多';
   }
 }
+
+const introButton = document.getElementById('intro-button');
+
+introButton.addEventListener('click', function () {
+  toggleIntro(introButton);
+});
   function saveSpice(selectElement) {
     const selectedText =
       selectElement.options[selectElement.selectedIndex].text;
@@ -305,16 +324,34 @@ function clearSpice() {
 function toggleIngredients(button) {
   const ingredients = document.getElementById('beef-ingredients');
 
-  if (ingredients.style.display === 'none') {
-    ingredients.style.display = 'block';
-    button.textContent = '收起配料';
-    button.setAttribute('aria-expanded', 'true');
-  } else {
-    ingredients.style.display = 'none';
-    button.textContent = '查看配料';
-    button.setAttribute('aria-expanded', 'false');
-  }
+ if (ingredients.hidden) {
+  ingredients.hidden = false;
+  button.textContent = '收起配料';
+  button.setAttribute('aria-expanded', 'true');
+} else {
+  ingredients.hidden = true;
+  button.textContent = '查看配料';
+  button.setAttribute('aria-expanded', 'false');
 }
+}
+const ingredientsButton =
+  document.getElementById('ingredients-button');
+
+ingredientsButton.addEventListener('click', function () {
+  toggleIngredients(ingredientsButton);
+});
+const clearSpiceButton =
+  document.getElementById('clear-spice-button');
+
+clearSpiceButton.addEventListener('click', function () {
+  clearSpice();
+});
+const beefSpiceSelect =
+  document.getElementById('beef-spice');
+
+beefSpiceSelect.addEventListener('change', function () {
+  saveSpice(beefSpiceSelect);
+});
   const savedSpice = localStorage.getItem('beefSpice');
 
   if (savedSpice) {
