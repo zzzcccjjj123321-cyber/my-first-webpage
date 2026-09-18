@@ -6,8 +6,8 @@
   <meta name="description" content="RAHMAT Yunnan Muslim Cuisine in Batu Kawan, Penang. Opening soon with halal Yunnan rice noodles and specialty dishes.">
   <link rel="icon" type="image/jpeg" href="images/logo.jpg">
  <title>RAHMAT 云南清真餐厅</title>
-
-  <link rel="stylesheet" href="style.css">  
+  <link rel="stylesheet" href="style.css"> 
+  <script src="script.js" defer></script> 
 </head>
 <body>
 <main id="top" class="card"><header>
@@ -17,6 +17,7 @@
 <button id="intro-button"
         type="button"
         aria-controls="message"
+        aria-expanded="false"
         title="点击展开或收起餐厅介绍">
   了解更多
 </button>
@@ -108,9 +109,8 @@ height="600"
 <p>新店筹备中，开业日期与营业时间即将公布。</p>
 <!-- 页脚区域 -->
 <footer class="site-footer">
-  © 2026 RAHMAT 云南清真餐厅
+  © <span id="current-year">2026</span> RAHMAT 云南清真餐厅
 </footer>
   </main>
-<script src="script.js"></script>
 </body>
 </html>

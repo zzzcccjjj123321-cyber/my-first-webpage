@@ -1,14 +1,18 @@
-function toggleIntro(button) {
+ 'use strict';
+ function toggleIntro(button) {
   const message = document.getElementById('message');
 
   if (button.textContent.trim() === '了解更多') {
     message.textContent =
       '欢迎来到 RAHMAT！我们主打云南清真美食，Batu Kawan 新店敬请期待。';
     button.textContent = '收起介绍';
+    button.setAttribute('aria-expanded', 'true');
+
   } else {
     message.textContent =
       '云南清真料理 · Yunnan Muslim Cuisine';
     button.textContent = '了解更多';
+    button.setAttribute('aria-expanded', 'false');
   }
 }
 
@@ -79,3 +83,8 @@ beefSpiceSelect.addEventListener('change', function () {
     document.getElementById('spice-result').textContent =
       '你选择的辣度：' + savedText;
   }
+  const currentYear =
+  document.getElementById('current-year');
+
+currentYear.textContent =
+  new Date().getFullYear();
