@@ -82,6 +82,16 @@ button:active,
   border-radius: 12px;
   background-color: #fafafa;
 }
+.dish-list {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.dish-list article {
+  flex: 1;
+  min-width: 0;
+}
 /* 菜品图片：控制宽度和圆角 */
 .dish-image {
   width: 220px;
@@ -154,6 +164,19 @@ html {
   .card {
     padding: 24px 16px;
   }
+
+  .dish-list {
+    flex-direction: column;
+  }
+
+  .dish-list article {
+    width: 100%;
+  }
+
+  .dish-divider {
+    display: block;
+    width: 100%;
+  }
 }
 button:focus-visible,
 a:focus-visible,
@@ -170,6 +193,7 @@ select:focus-visible {
 }
 
 .dish-divider {
+  display: none;
   margin: 28px 0;
   border: none;
   border-top: 1px solid #e5e5e5;
