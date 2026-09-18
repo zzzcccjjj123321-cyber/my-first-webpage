@@ -1,0 +1,172 @@
+:root {
+  --brand-green: #14532d;
+}
+    /* Logo 图片样式 */
+.logo {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;border-radius: 18px;
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+  color: var(--brand-green);
+}
+
+    p {
+      color: #444444;
+    }
+    .card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+    button {
+  transition: transform 0.3s;
+ background-color: var(--brand-green);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 6px;
+}
+button:hover {
+  transform: scale(1.05);
+}
+.map-link {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 6px;
+  text-decoration: none;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.map-link:hover {
+  transform: scale(1.05);
+}
+
+.menu-section {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background-color: #fafafa;
+}
+/* 菜品图片：控制宽度和圆角 */
+.dish-image {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.dish-info {
+  font-size: 14px;
+  color: var(--brand-green);
+  font-weight: bold;
+  margin-top: 8px;
+}
+/* 只用于店长推荐标签 */
+.recommend-tag {
+  display: inline-block;
+  background-color: #dcfce7;
+  color: var(--brand-green);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+/* 第一道菜标签的专用背景 */
+.special-tag {
+  background-color: #fef3c7;
+  color: #78350f;
+}
+/* 牛肉米线辣度选择框 */
+#beef-spice {
+  padding: 8px 12px;
+  border: 1px solid var(--brand-green);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--brand-green);
+  font-size: 14px;
+}
+html {
+  scroll-behavior: smooth;
+ } 
+  .internal-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: var(--brand-green);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin: 6px;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.internal-link:hover {
+  transform: scale(1.05);
+}
+
+.round-link {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  padding: 0;
+}
+.internal-link,
+.map-link {
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 24px 16px;
+  }
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid #d4a72c;
+  outline-offset: 3px;
+}
+.restaurant-address {
+  font-style: normal;
+}
+.image-note {
+  font-size: 12px;
+  color: #666;
+}
+
+.dish-divider {
+  margin: 28px 0;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+.site-footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #666;
+}
