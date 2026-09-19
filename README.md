@@ -10,8 +10,7 @@
 - 辣度选择与保存
 - 餐厅地图入口
 ## 在线网页
-
-[点击查看 RAHMAT 餐厅网页]（https://zzzcccjjj123321-cyber.github.io/my-first-webpage/）
+[点击查看 RAHMAT 餐厅网页](https://zzzcccjjj123321-cyber.github.io/my-first-webpage/)
 
 ## 项目更新记录
 
